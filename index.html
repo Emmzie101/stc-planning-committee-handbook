@@ -1,0 +1,2141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Transition Conference — Planning Committee Handbook</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:       #0A1628;
+    --navy-mid:   #112240;
+    --navy-light: #1B3358;
+    --steel:      #2A4A6B;
+    --sky:        #3D7AB5;
+    --sky-light:  #5C9DD6;
+    --mist:       #C8DCF0;
+    --frost:      #EBF4FC;
+    --gold:       #F5A623;
+    --gold-deep:  #D4861A;
+    --gold-pale:  #FEF3DC;
+    --amber:      #FFCA6B;
+    --green:      #2D7A5F;
+    --green-mid:  #3A9B78;
+    --green-light:#56C49A;
+    --green-pale: #E3F7F0;
+    --white:      #FFFFFF;
+    --off-white:  #F7FAFD;
+    --text-main:  #0D1F35;
+    --text-mid:   #344E6B;
+    --text-soft:  #6B87A8;
+    --radius-sm:  10px;
+    --radius-md:  18px;
+    --radius-lg:  28px;
+    --radius-xl:  40px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off-white);
+    color: var(--text-main);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+
+  /* ─── PRINT STYLES ─── */
+  @media print {
+    .no-print { display: none !important; }
+    body { background: white; font-size: 13px; }
+    .cover { min-height: auto; padding: 60px 40px; }
+    .section { page-break-inside: avoid; }
+  }
+
+  /* ─── COVER ─── */
+  .cover {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 45%, var(--steel) 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 480px; height: 480px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(245,166,35,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -80px;
+    width: 360px; height: 360px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(61,122,181,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cover-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(245,166,35,0.18);
+    border: 1px solid rgba(245,166,35,0.4);
+    border-radius: 50px;
+    padding: 8px 20px;
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--amber);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+
+  .cover-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.6rem, 6vw, 4.5rem);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.1;
+    max-width: 820px;
+    margin-bottom: 12px;
+  }
+
+  .cover-title span {
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .cover-subtitle {
+    font-size: 1.1rem;
+    color: var(--mist);
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    margin-bottom: 48px;
+    max-width: 520px;
+  }
+
+  .cover-pillars {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 56px;
+    max-width: 680px;
+  }
+
+  .pillar-chip {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 50px;
+    padding: 7px 16px;
+    font-size: 12px;
+    color: var(--mist);
+    font-weight: 500;
+  }
+
+  .cover-meta {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .meta-item {
+    text-align: center;
+  }
+
+  .meta-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--text-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+  }
+
+  .meta-value {
+    font-size: 15px;
+    color: var(--white);
+    font-weight: 600;
+  }
+
+  /* ─── TOC ─── */
+  .toc-section {
+    background: var(--navy-mid);
+    padding: 64px 40px;
+  }
+
+  .toc-inner {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .toc-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 20px;
+  }
+
+  .toc-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 40px;
+  }
+
+  .toc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  @media (max-width: 600px) { .toc-grid { grid-template-columns: 1fr; } }
+
+  .toc-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    border-radius: var(--radius-sm);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    text-decoration: none;
+    color: var(--mist);
+    font-size: 13.5px;
+    font-weight: 500;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .toc-item:hover {
+    background: rgba(245,166,35,0.1);
+    border-color: rgba(245,166,35,0.3);
+    color: var(--amber);
+  }
+
+  .toc-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--gold);
+    min-width: 24px;
+  }
+
+  /* ─── MAIN WRAPPER ─── */
+  .main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* ─── SECTION HEADERS ─── */
+  .section {
+    margin-top: 72px;
+  }
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Space Mono', monospace;
+    font-size: 10.5px;
+    color: var(--sky);
+    text-transform: uppercase;
+    letter-spacing: 0.13em;
+    margin-bottom: 10px;
+  }
+
+  .section-label .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+
+  h2.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .section-rule {
+    height: 3px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--gold) 0%, var(--sky-light) 60%, transparent 100%);
+    margin-bottom: 32px;
+    margin-top: 14px;
+  }
+
+  /* ─── WELCOME CARD ─── */
+  .welcome-card {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    border-radius: var(--radius-lg);
+    padding: 52px 48px;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .welcome-card::before {
+    content: '"';
+    font-family: 'Playfair Display', serif;
+    font-size: 220px;
+    color: rgba(245,166,35,0.07);
+    position: absolute;
+    top: -40px; left: 20px;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .welcome-card p {
+    font-size: 15.5px;
+    line-height: 1.85;
+    color: var(--mist);
+    max-width: 680px;
+    position: relative;
+  }
+
+  .welcome-card p + p { margin-top: 18px; }
+
+  .welcome-card .highlight {
+    color: var(--amber);
+    font-weight: 600;
+  }
+
+  /* ─── ABOUT GRID ─── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 4px;
+  }
+
+  @media (max-width: 650px) { .about-grid { grid-template-columns: 1fr; } }
+
+  .about-card {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 28px 28px 24px;
+    border: 1.5px solid var(--mist);
+    box-shadow: none;
+  }
+
+  .about-card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .about-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+
+  .about-card p, .about-card li {
+    font-size: 13.5px;
+    color: var(--text-mid);
+    line-height: 1.75;
+  }
+
+  .about-card ul { padding-left: 18px; }
+  .about-card ul li { margin-bottom: 4px; }
+
+  /* ─── CONFERENCE STRUCTURE DIAGRAM ─── */
+  .conf-structure {
+    background: var(--frost);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    margin-top: 24px;
+    border: 1.5px solid var(--mist);
+  }
+
+  .structure-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    color: var(--text-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 28px;
+    text-align: center;
+  }
+
+  .pillar-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+  }
+
+  @media (max-width: 700px) { .pillar-grid { grid-template-columns: 1fr 1fr; } }
+
+  .pillar-card {
+    background: var(--white);
+    border-radius: var(--radius-sm);
+    padding: 18px 14px;
+    text-align: center;
+    border-top: 4px solid var(--sky);
+    box-shadow: none;
+  }
+
+  .pillar-card:nth-child(2) { border-top-color: var(--gold); }
+  .pillar-card:nth-child(3) { border-top-color: var(--green-mid); }
+  .pillar-card:nth-child(4) { border-top-color: var(--sky-light); }
+  .pillar-card:nth-child(5) { border-top-color: var(--gold-deep); }
+
+  .pillar-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--mist);
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .pillar-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.4;
+  }
+
+  /* ─── NOT / IS BOXES ─── */
+  .contrast-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 24px;
+  }
+
+  @media (max-width: 600px) { .contrast-row { grid-template-columns: 1fr; } }
+
+  .contrast-box {
+    border-radius: var(--radius-md);
+    padding: 28px;
+  }
+
+  .contrast-box.not {
+    background: rgba(200,220,240,0.2);
+    border: 1.5px solid var(--mist);
+  }
+
+  .contrast-box.is {
+    background: linear-gradient(135deg, var(--green-pale), #d4f4ea);
+    border: 1.5px solid var(--green-light);
+  }
+
+  .contrast-box h4 {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 16px;
+  }
+
+  .contrast-box.not h4 { color: var(--text-soft); }
+  .contrast-box.is h4 { color: var(--green); }
+
+  .contrast-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 13.5px;
+    color: var(--text-mid);
+    font-weight: 500;
+  }
+
+  .contrast-item .icon { font-size: 1rem; margin-top: 1px; flex-shrink: 0; }
+
+  /* ─── ORG CHART ─── */
+  .org-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin: 32px 0;
+  }
+
+  .org-node {
+    border-radius: var(--radius-sm);
+    padding: 14px 32px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 13.5px;
+    position: relative;
+    width: fit-content;
+    min-width: 220px;
+  }
+
+  .org-node.founders {
+    background: var(--navy);
+    color: var(--white);
+    border-radius: var(--radius-md);
+  }
+
+  .org-node.leads {
+    background: var(--sky);
+    color: var(--white);
+  }
+
+  .org-node.members {
+    background: var(--mist);
+    color: var(--navy);
+  }
+
+  .org-node.volunteers {
+    background: var(--green-pale);
+    color: var(--green);
+    border: 1.5px solid var(--green-light);
+  }
+
+  .org-arrow {
+    width: 2px;
+    height: 28px;
+    background: linear-gradient(to bottom, var(--steel), var(--mist));
+    position: relative;
+  }
+
+  .org-arrow::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid var(--mist);
+  }
+
+  .org-desc {
+    font-size: 11.5px;
+    color: var(--text-soft);
+    margin-top: 4px;
+    font-weight: 400;
+  }
+
+  /* ─── TEAM CARDS ─── */
+  .teams-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 8px;
+  }
+
+  @media (max-width: 680px) { .teams-grid { grid-template-columns: 1fr; } }
+
+  .team-card {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1.5px solid var(--mist);
+    box-shadow: none;
+  }
+
+  .team-header {
+    padding: 22px 26px 18px;
+    background: var(--navy);
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .team-header.gold  { background: linear-gradient(135deg, #1a3050, #2a4a6b); border-left: 5px solid var(--gold); }
+  .team-header.sky   { background: linear-gradient(135deg, #1a3050, #2a4a6b); border-left: 5px solid var(--sky-light); }
+  .team-header.green { background: linear-gradient(135deg, #1a3050, #2a4a6b); border-left: 5px solid var(--green-mid); }
+  .team-header.amber { background: linear-gradient(135deg, #1a3050, #2a4a6b); border-left: 5px solid var(--amber); }
+  .team-header.teal  { background: linear-gradient(135deg, #1a3050, #2a4a6b); border-left: 5px solid #4ECDC4; }
+  .team-header.rose  { background: linear-gradient(135deg, #1a3050, #2a4a6b); border-left: 5px solid #FF6B8A; }
+  .team-header.purple{ background: linear-gradient(135deg, #1a3050, #2a4a6b); border-left: 5px solid #9B8FFF; }
+  .team-header.coral { background: linear-gradient(135deg, #1a3050, #2a4a6b); border-left: 5px solid #FF8C5A; }
+
+  .team-emoji { font-size: 1.6rem; }
+
+  .team-header-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.2;
+  }
+
+  .team-mission {
+    font-size: 11.5px;
+    color: var(--mist);
+    margin-top: 4px;
+    font-style: italic;
+  }
+
+  .team-body {
+    padding: 22px 26px;
+  }
+
+  .team-body h5 {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--sky);
+    margin-bottom: 10px;
+    margin-top: 18px;
+  }
+
+  .team-body h5:first-child { margin-top: 0; }
+
+  .check-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .check-list li {
+    display: flex;
+    gap: 9px;
+    align-items: flex-start;
+    font-size: 13px;
+    color: var(--text-mid);
+    margin-bottom: 7px;
+    line-height: 1.55;
+  }
+
+  .check-list li::before {
+    content: '→';
+    color: var(--sky);
+    font-size: 12px;
+    margin-top: 1px;
+    flex-shrink: 0;
+  }
+
+  .deliverables-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 4px;
+  }
+
+  .pill {
+    background: var(--frost);
+    border: 1px solid var(--mist);
+    border-radius: 50px;
+    padding: 5px 13px;
+    font-size: 11.5px;
+    color: var(--navy);
+    font-weight: 500;
+  }
+
+  .pill.gold { background: var(--gold-pale); border-color: var(--amber); color: var(--gold-deep); }
+  .pill.green { background: var(--green-pale); border-color: var(--green-light); color: var(--green); }
+
+  .volunteer-tag {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 4px;
+  }
+
+  .vtag {
+    background: var(--navy-mid);
+    border-radius: 50px;
+    padding: 4px 12px;
+    font-size: 11px;
+    color: var(--mist);
+    font-weight: 500;
+  }
+
+  /* ─── PAYMENT TABLE ─── */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 8px;
+  }
+
+  @media (max-width: 700px) { .pricing-grid { grid-template-columns: 1fr; } }
+
+  .price-card {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1.5px solid var(--mist);
+    box-shadow: none;
+  }
+
+  .price-card.featured {
+    border-color: var(--gold);
+    box-shadow: none;
+  }
+
+  .price-header {
+    padding: 22px 22px 18px;
+    background: var(--navy-mid);
+    text-align: center;
+  }
+
+  .price-card.featured .price-header {
+    background: linear-gradient(135deg, var(--navy), var(--steel));
+    position: relative;
+  }
+
+  .price-card.featured .price-header::after {
+    content: 'MOST POPULAR';
+    position: absolute;
+    top: 10px; right: 10px;
+    background: var(--gold);
+    color: var(--navy);
+    font-family: 'Space Mono', monospace;
+    font-size: 8px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 50px;
+    letter-spacing: 0.08em;
+  }
+
+  .price-tier {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: var(--mist);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 6px;
+  }
+
+  .price-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .price-amount {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.8rem;
+    color: var(--amber);
+    font-weight: 700;
+  }
+
+  .price-body {
+    padding: 20px 22px;
+    background: var(--white);
+  }
+
+  .price-feature {
+    display: flex;
+    gap: 9px;
+    align-items: flex-start;
+    font-size: 12.5px;
+    color: var(--text-mid);
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+
+  .price-feature::before {
+    content: '✓';
+    color: var(--green-mid);
+    font-weight: 700;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+
+  /* ─── RULES ─── */
+  .rules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin-top: 8px;
+  }
+
+  .rule-card {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 24px 24px 20px;
+    border: 1.5px solid var(--mist);
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .rule-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--mist);
+    line-height: 1;
+    min-width: 36px;
+  }
+
+  .rule-content h4 {
+    font-weight: 700;
+    color: var(--navy);
+    font-size: 14.5px;
+    margin-bottom: 6px;
+  }
+
+  .rule-content p {
+    font-size: 12.5px;
+    color: var(--text-mid);
+    line-height: 1.6;
+  }
+
+  /* ─── COMM STRUCTURE ─── */
+  .comm-channels {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin-top: 8px;
+  }
+
+  .comm-channel {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 22px 20px;
+    border: 1.5px solid var(--mist);
+    text-align: center;
+  }
+
+  .comm-channel .icon { font-size: 1.8rem; margin-bottom: 10px; display: block; }
+  .comm-channel h4 {
+    font-weight: 700;
+    color: var(--navy);
+    font-size: 13.5px;
+    margin-bottom: 6px;
+  }
+
+  .comm-channel p {
+    font-size: 12px;
+    color: var(--text-soft);
+    line-height: 1.5;
+  }
+
+  /* ─── SUCCESS METRICS ─── */
+  .success-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 8px;
+  }
+
+  .success-card {
+    background: linear-gradient(135deg, var(--navy-mid), var(--navy-light));
+    border-radius: var(--radius-md);
+    padding: 26px 22px;
+    text-align: center;
+    color: var(--white);
+  }
+
+  .success-card .icon { font-size: 1.8rem; margin-bottom: 12px; display: block; }
+  .success-card p { font-size: 13.5px; color: var(--mist); line-height: 1.6; }
+
+  /* ─── TIMELINE ─── */
+  .timeline {
+    position: relative;
+    padding-left: 36px;
+    margin-top: 8px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 10px; top: 8px; bottom: 8px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--gold), var(--sky-light), var(--green-mid));
+    border-radius: 2px;
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 28px;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -30px; top: 4px;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 2px solid var(--white);
+    box-shadow: 0 0 0 2px var(--gold);
+  }
+
+  .timeline-item:nth-child(2)::before { background: var(--sky); box-shadow: 0 0 0 2px var(--sky); }
+  .timeline-item:nth-child(3)::before { background: var(--green-mid); box-shadow: 0 0 0 2px var(--green-mid); }
+  .timeline-item:nth-child(4)::before { background: var(--gold-deep); box-shadow: 0 0 0 2px var(--gold-deep); }
+  .timeline-item:nth-child(5)::before { background: var(--sky-light); box-shadow: 0 0 0 2px var(--sky-light); }
+
+  .timeline-phase {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+
+  .timeline-item:nth-child(2) .timeline-phase { color: var(--sky); }
+  .timeline-item:nth-child(3) .timeline-phase { color: var(--green-mid); }
+  .timeline-item:nth-child(4) .timeline-phase { color: var(--gold-deep); }
+  .timeline-item:nth-child(5) .timeline-phase { color: var(--sky-light); }
+
+  .timeline-title {
+    font-weight: 700;
+    color: var(--navy);
+    font-size: 14.5px;
+    margin-bottom: 6px;
+  }
+
+  .timeline-desc {
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.6;
+  }
+
+  /* ─── WORKFLOW EXPECTATIONS ─── */
+  .workflow-card {
+    background: linear-gradient(135deg, var(--frost), var(--white));
+    border-radius: var(--radius-lg);
+    padding: 40px 44px;
+    border: 1.5px solid var(--mist);
+    margin-top: 8px;
+  }
+
+  .workflow-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 24px;
+  }
+
+  @media (max-width: 600px) { .workflow-items { grid-template-columns: 1fr; } }
+
+  .wflow-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--white);
+    border-radius: var(--radius-sm);
+    padding: 16px 18px;
+    border: 1px solid var(--mist);
+  }
+
+  .wflow-icon { font-size: 1.4rem; flex-shrink: 0; }
+
+  .wflow-text h5 {
+    font-weight: 700;
+    color: var(--navy);
+    font-size: 13.5px;
+    margin-bottom: 4px;
+  }
+
+  .wflow-text p {
+    font-size: 12px;
+    color: var(--text-soft);
+    line-height: 1.5;
+  }
+
+  /* ─── CONTACT SECTION ─── */
+  .contact-banner {
+    background: linear-gradient(135deg, var(--navy-mid), var(--steel));
+    border-radius: var(--radius-lg);
+    padding: 44px 48px;
+    margin-top: 8px;
+    color: var(--white);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 28px;
+  }
+
+  @media (max-width: 650px) { .contact-grid { grid-template-columns: 1fr; } }
+
+  .contact-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: var(--radius-md);
+    padding: 22px 22px;
+  }
+
+  .contact-role {
+    font-family: 'Space Mono', monospace;
+    font-size: 9.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--amber);
+    margin-bottom: 8px;
+  }
+
+  .contact-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+
+  .contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12.5px;
+    color: var(--mist);
+    margin-bottom: 5px;
+  }
+
+  .contact-detail .icon { font-size: 0.9rem; }
+
+  .contact-placeholder {
+    background: rgba(255,255,255,0.05);
+    border: 1px dashed rgba(255,255,255,0.2);
+    border-radius: var(--radius-sm);
+    padding: 12px 16px;
+    margin-top: 8px;
+    font-size: 12px;
+    color: rgba(200,220,240,0.6);
+    font-style: italic;
+  }
+
+  /* ─── CONSENT FORM ─── */
+  .consent-box {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    border: 2.5px solid var(--mist);
+    overflow: hidden;
+    margin-top: 8px;
+  }
+
+  .consent-header {
+    background: var(--navy);
+    padding: 28px 36px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .consent-header-icon {
+    background: rgba(245,166,35,0.2);
+    border: 1px solid rgba(245,166,35,0.4);
+    border-radius: 50%;
+    width: 48px; height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+  }
+
+  .consent-header-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--white);
+  }
+
+  .consent-header-text p {
+    font-size: 12px;
+    color: var(--mist);
+    margin-top: 3px;
+  }
+
+  .consent-body {
+    padding: 36px;
+  }
+
+  .consent-intro {
+    font-size: 13.5px;
+    color: var(--text-mid);
+    line-height: 1.75;
+    background: var(--frost);
+    border-left: 4px solid var(--sky);
+    padding: 16px 20px;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    margin-bottom: 28px;
+  }
+
+  .consent-items {
+    margin-bottom: 28px;
+  }
+
+  .consent-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 14px 16px;
+    border-radius: var(--radius-sm);
+    margin-bottom: 10px;
+    border: 1.5px solid var(--mist);
+  }
+
+  .consent-item-check {
+    width: 20px; height: 20px;
+    border: 2px solid var(--sky);
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-top: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: transparent;
+  }
+
+  .consent-item-text h5 {
+    font-weight: 700;
+    font-size: 13.5px;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+
+  .consent-item-text p {
+    font-size: 12px;
+    color: var(--text-mid);
+    line-height: 1.55;
+  }
+
+  .consent-signature-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 28px;
+  }
+
+  @media (max-width: 600px) { .consent-signature-block { grid-template-columns: 1fr; } }
+
+  .sig-field {
+    border-bottom: 2px solid var(--mist);
+    padding-bottom: 6px;
+    margin-bottom: 4px;
+    min-height: 36px;
+  }
+
+  .sig-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-soft);
+    margin-top: 6px;
+  }
+
+  .personal-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 600px) { .personal-info-grid { grid-template-columns: 1fr; } }
+
+  .info-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .info-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-soft);
+  }
+
+  .info-input {
+    border: 1.5px solid var(--mist);
+    border-radius: var(--radius-sm);
+    padding: 10px 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13.5px;
+    color: var(--text-main);
+    background: var(--frost);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .info-input:focus { border-color: var(--sky); background: var(--white); }
+
+  /* ─── FOOTER NOTE ─── */
+  .founder-close {
+    background: var(--navy);
+    border-radius: var(--radius-lg);
+    padding: 52px 48px;
+    text-align: center;
+    margin-top: 8px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .founder-close::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 240px; height: 240px;
+    background: radial-gradient(circle, rgba(245,166,35,0.12), transparent);
+    border-radius: 50%;
+  }
+
+  .founder-close h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    color: var(--white);
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.3;
+  }
+
+  .founder-close h3 em { color: var(--amber); font-style: italic; }
+
+  .founder-close p {
+    font-size: 14.5px;
+    color: var(--mist);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+
+  .founder-close p + p { margin-top: 14px; }
+
+  /* ─── GLOBAL PAGE FOOTER ─── */
+  .page-footer {
+    background: var(--navy-mid);
+    padding: 24px 40px;
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 10.5px;
+    color: var(--text-soft);
+    letter-spacing: 0.08em;
+    margin-top: 72px;
+  }
+
+  /* ─── DIVIDER ─── */
+  .section-divider {
+    height: 1px;
+    background: var(--mist);
+    margin: 56px 0 0;
+    border: none;
+  }
+
+  /* ─── HIGHLIGHT BOX ─── */
+  .highlight-box {
+    background: linear-gradient(135deg, var(--gold-pale), #fff9eb);
+    border: 1.5px solid var(--amber);
+    border-radius: var(--radius-md);
+    padding: 22px 28px;
+    margin-top: 18px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .highlight-box .icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
+  .highlight-box p { font-size: 13.5px; color: var(--gold-deep); line-height: 1.65; font-weight: 500; }
+
+  /* ─── SPEAKER APPRECIATION ─── */
+  .speaker-appre {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .appre-item {
+    background: var(--white);
+    border-radius: var(--radius-sm);
+    padding: 16px 16px;
+    border: 1.5px solid var(--mist);
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 12.5px;
+    color: var(--text-mid);
+    font-weight: 500;
+    line-height: 1.45;
+  }
+
+  .appre-item .icon { color: var(--gold); font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+
+  /* ─── INFOBOX ─── */
+  .info-box {
+    background: var(--frost);
+    border-left: 4px solid var(--sky);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 16px 20px;
+    margin-top: 18px;
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.7;
+  }
+
+  .info-box strong { color: var(--navy); }
+
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════ COVER ═══════════════════════════ -->
+<div class="cover">
+  <div class="cover-badge">
+    <span>📘</span> Official Internal Document · 2025 Edition
+  </div>
+  <h1 class="cover-title">Student Transition<br><span>Conference</span></h1>
+  <p class="cover-subtitle">Planning Committee Handbook — Your Complete Guide to Building Something Meaningful</p>
+  <div class="cover-pillars">
+    <span class="pillar-chip">🎓 University Transition</span>
+    <span class="pillar-chip">📚 Academic Mastery</span>
+    <span class="pillar-chip">💼 Skills & Career</span>
+    <span class="pillar-chip">🌐 Digital Identity</span>
+    <span class="pillar-chip">🤖 Future Readiness</span>
+  </div>
+  <div class="cover-meta">
+    <div class="meta-item">
+      <div class="meta-label">Format</div>
+      <div class="meta-value">5-Day Online</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Theme</div>
+      <div class="meta-value">Beyond Admission</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Audience</div>
+      <div class="meta-value">SS3 · Jambites · 100L</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Document Type</div>
+      <div class="meta-value">Committee Handbook</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ TABLE OF CONTENTS ═══════════════════════════ -->
+<div class="toc-section">
+  <div class="toc-inner">
+    <div class="toc-label">📋 Navigation</div>
+    <h2 class="toc-heading">Table of Contents</h2>
+    <div class="toc-grid">
+      <a href="#welcome" class="toc-item"><span class="toc-num">01</span> Welcome Note</a>
+      <a href="#about" class="toc-item"><span class="toc-num">02</span> About the Conference</a>
+      <a href="#structure" class="toc-item"><span class="toc-num">03</span> Organizational Structure</a>
+      <a href="#founders" class="toc-item"><span class="toc-num">04</span> Role of Founders</a>
+      <a href="#teams" class="toc-item"><span class="toc-num">05</span> Committee Teams & Responsibilities</a>
+      <a href="#pricing" class="toc-item"><span class="toc-num">06</span> Conference Pricing Tiers</a>
+      <a href="#timeline" class="toc-item"><span class="toc-num">07</span> Planning Timeline & Phases</a>
+      <a href="#workflow" class="toc-item"><span class="toc-num">08</span> Workflow Expectations</a>
+      <a href="#rules" class="toc-item"><span class="toc-num">09</span> Core Operating Rules</a>
+      <a href="#comms" class="toc-item"><span class="toc-num">10</span> Communication Structure</a>
+      <a href="#success" class="toc-item"><span class="toc-num">11</span> What Success Looks Like</a>
+      <a href="#contact" class="toc-item"><span class="toc-num">12</span> Contact Directory</a>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- ═══════════════════════════ 01 WELCOME ═══════════════════════════ -->
+<div class="section" id="welcome">
+  <div class="section-label"><span class="dot"></span> Section 01</div>
+  <h2 class="section-title">Welcome to the Committee</h2>
+  <div class="section-rule"></div>
+  <div class="welcome-card">
+    <p>Welcome to the Planning Committee. You are not just volunteers helping with an event. You are <span class="highlight">founding builders</span> of a platform designed to help secondary school graduates and university students transition intentionally into academics, skills, and future opportunities.</p>
+    <p>This conference exists because many students move through education without structure, clarity, or guidance. Our mission is to change that.</p>
+    <p>Every decision you make, every message you send, every design you create contributes to shaping students' futures. <span class="highlight">You are part of something at its beginning.</span> Most students attend events. Very few build movements.</p>
+    <p>This conference may start small — but its impact depends on the seriousness, creativity, and ownership each of you brings. If we execute well, we are not just hosting a program — we are building a system that helps students think differently about learning, growth, and their future.</p>
+    <p style="margin-top:24px; font-family:'Playfair Display',serif; font-size:1.1rem; color: var(--amber);">Thank you for choosing to build with us. Let's create something meaningful.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ 02 ABOUT ═══════════════════════════ -->
+<div class="section" id="about">
+  <div class="section-label"><span class="dot"></span> Section 02</div>
+  <h2 class="section-title">About the Conference</h2>
+  <div class="section-rule"></div>
+
+  <div class="about-grid">
+    <div class="about-card">
+      <span class="about-card-icon">🎯</span>
+      <h4>Conference Purpose</h4>
+      <p>The Student Transition Conference is a <strong>5-day online academic workshop</strong> designed to move students from:</p>
+      <ul style="margin-top:10px;">
+        <li>Confusion → Clarity</li>
+        <li>Passive schooling → Intentional learning</li>
+        <li>Academic survival → Future readiness</li>
+      </ul>
+    </div>
+    <div class="about-card">
+      <span class="about-card-icon">👥</span>
+      <h4>Target Audience</h4>
+      <ul>
+        <li>Final-year secondary school students (SS3)</li>
+        <li>JAMB candidates (Jambites)</li>
+        <li>Fresh university students (100 Level)</li>
+      </ul>
+      <p style="margin-top:10px; font-size:12px; color:var(--text-soft);">Note: SS3 and Jambite recruitment via school partnerships, exam prep communities, and tutoring platforms.</p>
+    </div>
+    <div class="about-card">
+      <span class="about-card-icon">📅</span>
+      <h4>Event Format</h4>
+      <ul>
+        <li>Duration: 5 days, fully online</li>
+        <li>Daily sessions: ~1 hour per day</li>
+        <li>Platform: Zoom / Google Meet (TBC)</li>
+        <li>Includes speaker-led + host-led sessions</li>
+        <li>Interactive learning + community engagement</li>
+      </ul>
+    </div>
+    <div class="about-card">
+      <span class="about-card-icon">💡</span>
+      <h4>Conference Vision</h4>
+      <p>To help secondary school and early university students transition into <strong>independent, strategic academic thinkers</strong> through structured learning, systems thinking, and mentorship.</p>
+      <p style="margin-top:10px; font-size:12.5px; color:var(--sky); font-weight:600;">Theme: "Beyond Admission: The Transition Blueprint"</p>
+    </div>
+  </div>
+
+  <!-- Pillars Diagram -->
+  <div class="conf-structure" style="margin-top:22px;">
+    <div class="structure-title">Core Conference Pillars</div>
+    <div class="pillar-grid">
+      <div class="pillar-card">
+        <span class="pillar-num">01</span>
+        <div class="pillar-name">University Reality Blueprint</div>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-num">02</span>
+        <div class="pillar-name">Academic Mastery & Self-Management</div>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-num">03</span>
+        <div class="pillar-name">Skillfulness, Relevance & Career Positioning</div>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-num">04</span>
+        <div class="pillar-name">Digital Identity, Opportunities & Professional Presence</div>
+      </div>
+      <div class="pillar-card">
+        <span class="pillar-num">05</span>
+        <div class="pillar-name">Future Intelligence: AI, Tech & Global Competence</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Not / Is -->
+  <div class="contrast-row">
+    <div class="contrast-box not">
+      <h4>❌ This is NOT</h4>
+      <div class="contrast-item"><span class="icon">✗</span> Motivational speaking</div>
+      <div class="contrast-item"><span class="icon">✗</span> Generic webinars</div>
+      <div class="contrast-item"><span class="icon">✗</span> Passive listening</div>
+      <div class="contrast-item"><span class="icon">✗</span> A focus on grades alone</div>
+    </div>
+    <div class="contrast-box is">
+      <h4>✅ This IS</h4>
+      <div class="contrast-item"><span class="icon">✓</span> Systems-based learning</div>
+      <div class="contrast-item"><span class="icon">✓</span> Practical, real-world guidance</div>
+      <div class="contrast-item"><span class="icon">✓</span> Long-term student development</div>
+      <div class="contrast-item"><span class="icon">✓</span> Community building & alumni network</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ 03 STRUCTURE ═══════════════════════════ -->
+<div class="section" id="structure">
+  <div class="section-label"><span class="dot"></span> Section 03</div>
+  <h2 class="section-title">Organizational Structure</h2>
+  <div class="section-rule"></div>
+
+  <p style="color:var(--text-mid); font-size:14px; margin-bottom:8px;">The conference operates through clearly structured teams. Every team has a Committee Lead, supporting Planning Members, and assigned Volunteers. Here is how authority flows:</p>
+
+  <div class="org-chart">
+    <div class="org-node founders">
+      🏛️ Founders / Conference Directors
+      <div class="org-desc" style="color:var(--mist);">Vision · Final decisions · Academic direction</div>
+    </div>
+    <div class="org-arrow"></div>
+    <div class="org-node leads">
+      🗂️ Committee Leads
+      <div class="org-desc" style="color:rgba(255,255,255,0.7);">One per team · Own their domain · Report to Founders</div>
+    </div>
+    <div class="org-arrow"></div>
+    <div class="org-node volunteers">
+      🙋 Volunteers
+      <div class="org-desc">Execute tasks · Support operations · Assigned by team leads · Document progress</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════ 04 FOUNDERS ═══════════════════════════ -->
+<div class="section" id="founders">
+  <div class="section-label"><span class="dot"></span> Section 04</div>
+  <h2 class="section-title">Role of Founders <span style="font-size:1.1rem; color:var(--text-soft); font-weight:400;">(David &amp; Emmanuella)</span></h2>
+  <div class="section-rule"></div>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px;">
+    <div class="about-card">
+      <span class="about-card-icon">🔭</span>
+      <h4>Vision & Direction</h4>
+      <ul><li>Define conference mission & learning outcomes</li><li>Design academic theme</li><li>Create intellectual positioning</li><li>Approve speakers</li></ul>
+    </div>
+    <div class="about-card">
+      <span class="about-card-icon">✅</span>
+      <h4>Final Approvals</h4>
+      <ul><li>Approve branding direction</li><li>Decide pricing model</li><li>Approve partnerships & sponsors</li><li>Oversee execution timelines</li></ul>
+    </div>
+    <div class="about-card">
+      <span class="about-card-icon">🧭</span>
+      <h4>Executive Oversight</h4>
+      <ul><li>Weekly leadership meetings</li><li>Conflict resolution</li><li>Guide speakers on outcomes</li><li>Ensure quality of all sessions</li></ul>
+    </div>
+  </div>
+
+  <div class="highlight-box" style="margin-top:18px;">
+    <span class="icon">💡</span>
+    <p>The founders are <strong>not doing everything</strong> — they are <strong>directing everything</strong>. As a committee member, you are empowered to lead your domain. Bring problems early, not at the last minute.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ 05 TEAMS ═══════════════════════════ -->
+<div class="section" id="teams">
+  <div class="section-label"><span class="dot"></span> Section 05</div>
+  <h2 class="section-title">Committee Teams & Responsibilities</h2>
+  <div class="section-rule"></div>
+
+  <div class="teams-grid">
+
+    <!-- SPEAKER -->
+    <div class="team-card">
+      <div class="team-header gold">
+        <span class="team-emoji">🎤</span>
+        <div class="team-header-text">
+          <h3>Speaker Management Team</h3>
+          <div class="team-mission">Manage speakers like partners — from first contact to final appreciation.</div>
+        </div>
+      </div>
+      <div class="team-body">
+        <h5>Core Responsibilities</h5>
+        <ul class="check-list">
+          <li>Research, identify and professionally invite aligned speakers</li>
+          <li>Track confirmations and manage communication</li>
+          <li>Provide event briefing kits and schedule rehearsals</li>
+          <li>Manage session timing and technical setup per speaker</li>
+          <li>Coordinate full appreciation delivery after the event</li>
+          <li>Maintain long-term relationships and collect testimonials</li>
+        </ul>
+        <h5>Volunteers Under This Team</h5>
+        <div class="volunteer-tag">
+          <span class="vtag">Speaker assistants</span>
+          <span class="vtag">Communication coordinators</span>
+          <span class="vtag">Session timekeepers</span>
+        </div>
+        <h5>Key Deliverables</h5>
+        <div class="deliverables-pills">
+          <span class="pill">Speaker database</span>
+          <span class="pill gold">Speaker briefing kit</span>
+          <span class="pill">Appreciation packages</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- TECHNICAL -->
+    <div class="team-card">
+      <div class="team-header teal">
+        <span class="team-emoji">💻</span>
+        <div class="team-header-text">
+          <h3>Technical & Digital Infrastructure</h3>
+          <div class="team-mission">Own the entire digital experience — registration to recording.</div>
+        </div>
+      </div>
+      <div class="team-body">
+        <h5>Website & Registration</h5>
+        <ul class="check-list">
+          <li>Build & manage the registration website with payment integration</li>
+          <li>Automate onboarding: confirmation → goodies → WhatsApp invite</li>
+          <li>Ensure mobile optimization & maintain participant database</li>
+        </ul>
+        <h5>Event Technology</h5>
+        <ul class="check-list">
+          <li>Zoom setup, hosting & backup host control</li>
+          <li>Recording management & archive</li>
+          <li>Run technical rehearsals before each session</li>
+          <li>Handle live troubleshooting during sessions</li>
+        </ul>
+        <h5>Volunteers Under This Team</h5>
+        <div class="volunteer-tag">
+          <span class="vtag">Zoom moderators</span>
+          <span class="vtag">Data managers</span>
+          <span class="vtag">Recording coordinators</span>
+        </div>
+        <h5>Key Deliverables</h5>
+        <div class="deliverables-pills">
+          <span class="pill green">Functional website</span>
+          <span class="pill">Automation system</span>
+          <span class="pill">Recording archive</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- BRANDING -->
+    <div class="team-card">
+      <div class="team-header rose">
+        <span class="team-emoji">🎨</span>
+        <div class="team-header-text">
+          <h3>Branding & Graphics Team</h3>
+          <div class="team-mission">Build a distinct intellectual brand — visual identity students remember.</div>
+        </div>
+      </div>
+      <div class="team-body">
+        <h5>6 Design Phases</h5>
+        <ul class="check-list">
+          <li><strong>Phase 1 — Brand Foundation:</strong> Logo, palette, typography, brand guidelines PDF</li>
+          <li><strong>Phase 2 — Marketing Assets:</strong> Conference poster, speaker announcements, countdown graphics</li>
+          <li><strong>Phase 3 — Website Assets:</strong> Icons, section visuals, UI elements (with Tech Team)</li>
+          <li><strong>Phase 4 — Event Materials:</strong> Slide templates, workbooks, note templates</li>
+          <li><strong>Phase 5 — Post-Event Assets:</strong> Certificates, testimonial templates, impact report</li>
+          <li><strong>Phase 6 — Internal Materials:</strong> Organizer badges, zoom backgrounds, letterheads</li>
+        </ul>
+        <h5>Critical Rule</h5>
+        <div class="highlight-box" style="margin-top:0; padding:12px 14px;">
+          <span class="icon">⚠️</span>
+          <p style="font-size:12px;">Only <strong>ONE person</strong> approves final designs. No shared approval confusion.</p>
+        </div>
+        <h5>Volunteers Under This Team</h5>
+        <div class="volunteer-tag">
+          <span class="vtag">Graphic designers</span>
+          <span class="vtag">Template designers</span>
+          <span class="vtag">Visual assistants</span>
+        </div>
+        <h5>Key Deliverables</h5>
+        <div class="deliverables-pills">
+          <span class="pill">Brand identity system</span>
+          <span class="pill gold">Marketing visuals library</span>
+          <span class="pill">Event materials pack</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- MARKETING -->
+    <div class="team-card">
+      <div class="team-header amber">
+        <span class="team-emoji">📢</span>
+        <div class="team-header-text">
+          <h3>Marketing, Publicity &amp; Outreach Team</h3>
+          <div class="team-mission">Reach the right students, build public presence, and fill seats intentionally.</div>
+        </div>
+      </div>
+      <div class="team-body">
+        <h5>Core Responsibilities</h5>
+        <ul class="check-list">
+          <li>Execute marketing calendar across all platforms</li>
+          <li>Manage social media (Facebook, TikTok, online learning spaces)</li>
+          <li>Coordinate school outreach via teachers and school partnerships</li>
+          <li>Manage student ambassadors and community promoters</li>
+          <li>Monitor registration growth and run targeted campaigns</li>
+        </ul>
+        <h5>Content Strategy</h5>
+        <ul class="check-list">
+          <li>Educational posts, speaker highlights, student pain-point content</li>
+          <li>Countdown campaigns and urgency-based registration pushes</li>
+        </ul>
+        <h5>Volunteers Under This Team</h5>
+        <div class="volunteer-tag">
+          <span class="vtag">Campus ambassadors</span>
+          <span class="vtag">Social media posters</span>
+          <span class="vtag">Outreach callers</span>
+        </div>
+        <h5>Key Deliverables</h5>
+        <div class="deliverables-pills">
+          <span class="pill">Marketing calendar</span>
+          <span class="pill gold">Outreach tracker</span>
+          <span class="pill">Registration analytics</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PARTNERSHIPS -->
+    <div class="team-card">
+      <div class="team-header purple">
+        <span class="team-emoji">🤝</span>
+        <div class="team-header-text">
+          <h3>Partnerships & Sponsorship</h3>
+          <div class="team-mission">Secure support, credibility, and institutional collaboration.</div>
+        </div>
+      </div>
+      <div class="team-body">
+        <h5>Core Responsibilities</h5>
+        <ul class="check-list">
+          <li>Identify and research potential sponsors and partners</li>
+          <li>Send professional sponsorship proposals</li>
+          <li>Manage partner relationships and follow-up timelines</li>
+          <li>Secure institutional and community support</li>
+        </ul>
+        <h5>Budget Notes (April 2025 Decisions)</h5>
+        <ul class="check-list">
+          <li>Technical team backup data reimbursements</li>
+          <li>Branding & design (subsidized rate)</li>
+          <li>Speaker appreciation: ₦10,000 per speaker</li>
+          <li>Online marketing ads fund</li>
+          <li>Contingency fund</li>
+        </ul>
+        <h5>Volunteers Under This Team</h5>
+        <div class="volunteer-tag">
+          <span class="vtag">Research assistants</span>
+          <span class="vtag">Outreach coordinators</span>
+          <span class="vtag">Follow-up managers</span>
+        </div>
+        <h5>Key Deliverables</h5>
+        <div class="deliverables-pills">
+          <span class="pill">Sponsor deck</span>
+          <span class="pill">Partner database</span>
+          <span class="pill green">Sponsorship agreements</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PARTICIPANT EXPERIENCE -->
+    <div class="team-card">
+      <div class="team-header green">
+        <span class="team-emoji">🎯</span>
+        <div class="team-header-text">
+          <h3>Community Management Team</h3>
+          <div class="team-mission">Build, nurture and manage the community — before, during, and after the conference.</div>
+        </div>
+      </div>
+      <div class="team-body">
+        <h5>Core Responsibilities</h5>
+        <ul class="check-list">
+          <li>Manage and moderate the WhatsApp community daily</li>
+          <li>Send reminders and run daily engagement activities</li>
+          <li>Support participant onboarding from registration to Day 1</li>
+          <li>Collect structured feedback after each session</li>
+          <li>Coordinate certificate issuance and alumni onboarding</li>
+        </ul>
+        <h5>Volunteers Under This Team</h5>
+        <div class="volunteer-tag">
+          <span class="vtag">Community moderators</span>
+          <span class="vtag">Engagement coordinators</span>
+          <span class="vtag">Feedback collectors</span>
+        </div>
+        <h5>Key Deliverables</h5>
+        <div class="deliverables-pills">
+          <span class="pill green">Engagement plan</span>
+          <span class="pill">Participant feedback report</span>
+          <span class="pill">Alumni onboarding</span>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- SESSION MODERATORS -->
+    <div class="team-card">
+      <div class="team-header" style="background: linear-gradient(135deg, #1a3050, #2a4a6b); border-left: 5px solid #7B61FF;">
+        <span class="team-emoji">🎙️</span>
+        <div class="team-header-text">
+          <h3>Session Moderators Team</h3>
+          <div class="team-mission">Keep every live session structured, engaging, and on time.</div>
+        </div>
+      </div>
+      <div class="team-body">
+        <h5>Core Responsibilities</h5>
+        <ul class="check-list">
+          <li>Host and moderate each daily live session on Zoom</li>
+          <li>Introduce speakers professionally and provide context before each session</li>
+          <li>Manage participant interaction — muting, unmuting, and chat moderation</li>
+          <li>Facilitate Q&A sessions: curate and read out participant questions</li>
+          <li>Keep sessions on time — signal speakers at 5 minutes and 1 minute to end</li>
+          <li>Maintain energy and engagement throughout each session</li>
+          <li>Handle unexpected disruptions calmly and professionally</li>
+          <li>Coordinate closely with Technical Team on all live session transitions</li>
+        </ul>
+        <h5>Volunteers Under This Team</h5>
+        <div class="volunteer-tag">
+          <span class="vtag">Q&A coordinators</span>
+          <span class="vtag">Chat monitors</span>
+          <span class="vtag">Session timekeepers</span>
+        </div>
+        <h5>Key Deliverables</h5>
+        <div class="deliverables-pills">
+          <span class="pill">Session run scripts</span>
+          <span class="pill gold">Q&A curation log</span>
+          <span class="pill">Daily session reports</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPERATIONS -->
+    <div class="team-card">
+      <div class="team-header coral">
+        <span class="team-emoji">🧾</span>
+        <div class="team-header-text">
+          <h3>Operations & Logistics Team</h3>
+          <div class="team-mission">Ensure smooth, seamless daily execution.</div>
+        </div>
+      </div>
+      <div class="team-body">
+        <h5>Core Responsibilities</h5>
+        <ul class="check-list">
+          <li>Enforce and manage daily event schedule with precision</li>
+          <li>Track attendance across all 5 days</li>
+          <li>Coordinate internal teams and cross-team handoffs</li>
+          <li>Prepare and distribute run sheets before each session</li>
+          <li>Maintain backup and contingency plans for every scenario</li>
+        </ul>
+        <h5>Volunteers Under This Team</h5>
+        <div class="volunteer-tag">
+          <span class="vtag">Attendance trackers</span>
+          <span class="vtag">Time managers</span>
+          <span class="vtag">Operations assistants</span>
+        </div>
+        <h5>Key Deliverables</h5>
+        <div class="deliverables-pills">
+          <span class="pill">Master run sheet</span>
+          <span class="pill gold">Daily execution checklist</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end teams-grid -->
+</div>
+
+<!-- ═══════════════════════════ 06 PRICING ═══════════════════════════ -->
+<div class="section" id="pricing">
+  <div class="section-label"><span class="dot"></span> Section 06</div>
+  <h2 class="section-title">Conference Pricing Tiers</h2>
+  <div class="section-rule"></div>
+  <p style="color:var(--text-mid); font-size:14px; margin-bottom:20px;">Understanding our pricing helps every team align their messaging and execution. The three tiers reflect the value we deliver at each level.</p>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <div class="price-header">
+        <div class="price-tier">Tier 01</div>
+        <div class="price-name">Basic — Participant Pass</div>
+        <div class="price-amount">₦1,000</div>
+      </div>
+      <div class="price-body">
+        <div class="price-feature">Access to all five live sessions</div>
+        <div class="price-feature">Access to the open WhatsApp community</div>
+        <div class="price-feature">Digital certificate of participation</div>
+      </div>
+    </div>
+    <div class="price-card featured">
+      <div class="price-header">
+        <div class="price-tier">Tier 02</div>
+        <div class="price-name">Standard — Learner Plus</div>
+        <div class="price-amount">₦2,000</div>
+      </div>
+      <div class="price-body">
+        <div class="price-feature">Everything in Basic</div>
+        <div class="price-feature">Session recordings access (limited time)</div>
+        <div class="price-feature">Read & Recall Ebook</div>
+        <div class="price-feature">Academic Success Toolkit (templates, planner, productivity system)</div>
+        <div class="price-feature">Insider access to opportunities (scholarships, competitions, internships)</div>
+      </div>
+    </div>
+    <div class="price-card">
+      <div class="price-header">
+        <div class="price-tier">Tier 03</div>
+        <div class="price-name">Premium — Scholars Pass</div>
+        <div class="price-amount">₦5,000</div>
+      </div>
+      <div class="price-body">
+        <div class="price-feature">Everything in Standard</div>
+        <div class="price-feature">Exclusive post-conference workshop</div>
+        <div class="price-feature">1-on-1 academic mentorship access</div>
+        <div class="price-feature">Featured on LinkedIn posts</div>
+        <div class="price-feature">Invitation to exclusive mentorship group</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ 08 TIMELINE ═══════════════════════════ -->
+<div class="section" id="timeline">
+  <div class="section-label"><span class="dot"></span> Section 07</div>
+  <h2 class="section-title">Planning Timeline & Phases</h2>
+  <div class="section-rule"></div>
+  <p style="color:var(--text-mid); font-size:14px; margin-bottom:24px;">Every team operates within these five planning phases. Your lead will assign specific milestones within each phase.</p>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-phase">Phase 1 — Foundation</div>
+      <div class="timeline-title">Structure, Roles & Branding</div>
+      <div class="timeline-desc">Confirm committee roles, build brand identity system (logo, colors, type), finalize conference pillars and academic structure. Set up shared Google Drive and communication channels.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-phase">Phase 2 — Build</div>
+      <div class="timeline-title">Website, Content & Speaker Outreach</div>
+      <div class="timeline-desc">Launch registration website with payment integration and automation. Begin speaker outreach and confirmations. Develop marketing materials and curriculum outlines.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-phase">Phase 3 — Launch</div>
+      <div class="timeline-title">Marketing, Sales & Community</div>
+      <div class="timeline-desc">Activate full marketing campaign. Open registration. Build WhatsApp community and begin participant onboarding. Finalize all speaker briefing kits and session content.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-phase">Phase 4 — Execution</div>
+      <div class="timeline-title">The 5-Day Conference</div>
+      <div class="timeline-desc">Run daily sessions, manage technical execution, moderate community, collect daily feedback, ensure smooth timing and a premium participant experience across all five days.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-phase">Phase 5 — Post-Event</div>
+      <div class="timeline-title">Wrap-Up, Impact & Alumni</div>
+      <div class="timeline-desc">Distribute certificates, deliver speaker appreciation packages, compile impact reports, publish testimonials, onboard alumni community, and document lessons for the next edition.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ 09 WORKFLOW ═══════════════════════════ -->
+<div class="section" id="workflow">
+  <div class="section-label"><span class="dot"></span> Section 08</div>
+  <h2 class="section-title">General Workflow Expectations</h2>
+  <div class="section-rule"></div>
+
+  <div class="workflow-card">
+    <p style="font-size:14px; color:var(--text-mid);">Every committee member is expected to operate at a <strong style="color:var(--navy);">professional organizational standard</strong> — not as a casual volunteer. Below are the non-negotiable behavioral expectations.</p>
+
+    <div class="workflow-items">
+      <div class="wflow-item">
+        <span class="wflow-icon">📅</span>
+        <div class="wflow-text">
+          <h5>Attend All Meetings</h5>
+          <p>Be present for all scheduled meetings. Absence must be communicated 24hrs in advance with a reason and a delegate.</p>
+        </div>
+      </div>
+      <div class="wflow-item">
+        <span class="wflow-icon">⏰</span>
+        <div class="wflow-text">
+          <h5>Meet Deadlines — Always</h5>
+          <p>Deadlines are real commitments. If you cannot meet one, raise it 48hrs before — never after it passes.</p>
+        </div>
+      </div>
+      <div class="wflow-item">
+        <span class="wflow-icon">💬</span>
+        <div class="wflow-text">
+          <h5>Communicate Proactively</h5>
+          <p>Silence creates failure. Update your lead regularly — weekly minimum, more during active phases.</p>
+        </div>
+      </div>
+      <div class="wflow-item">
+        <span class="wflow-icon">📁</span>
+        <div class="wflow-text">
+          <h5>Document Everything</h5>
+          <p>Nothing should exist only in private chats. All work, decisions, and updates go into the shared Google Drive and Notion workspace.</p>
+        </div>
+      </div>
+      <div class="wflow-item">
+        <span class="wflow-icon">🤝</span>
+        <div class="wflow-text">
+          <h5>Collaborate Across Teams</h5>
+          <p>Your team doesn't exist in isolation. Branding works with Tech. Academic works with Speakers. Build bridges.</p>
+        </div>
+      </div>
+      <div class="wflow-item">
+        <span class="wflow-icon">🎓</span>
+        <div class="wflow-text">
+          <h5>Student First, Always</h5>
+          <p>Every decision must ask: "Does this improve the participant's experience?" If not, reconsider it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ 10 RULES ═══════════════════════════ -->
+<div class="section" id="rules">
+  <div class="section-label"><span class="dot"></span> Section 09</div>
+  <h2 class="section-title">Core Operating Rules</h2>
+  <div class="section-rule"></div>
+
+  <div class="rules-grid">
+    <div class="rule-card">
+      <div class="rule-num">01</div>
+      <div class="rule-content">
+        <h4>Respect Time</h4>
+        <p>Deadlines are binding. Treat every due date as a professional commitment. Lateness without notice is unacceptable.</p>
+      </div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">02</div>
+      <div class="rule-content">
+        <h4>Communicate Early</h4>
+        <p>Raise problems immediately — not after they become emergencies. No hero moves. Collective awareness prevents failure.</p>
+      </div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">03</div>
+      <div class="rule-content">
+        <h4>One Decision Authority</h4>
+        <p>Every team has one lead who finalizes team decisions. Escalate to founders only when leads cannot resolve.</p>
+      </div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">04</div>
+      <div class="rule-content">
+        <h4>Document Everything</h4>
+        <p>If it's not in the Drive or Notion, it doesn't exist officially. All work, decisions, meeting notes, and progress must be saved to both platforms.</p>
+      </div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">05</div>
+      <div class="rule-content">
+        <h4>Student Experience First</h4>
+        <p>Every decision must improve participant value. This is our north star. It supersedes convenience or speed.</p>
+      </div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">06</div>
+      <div class="rule-content">
+        <h4>Professional Conduct</h4>
+        <p>We operate like an organization, not a casual group. Your tone, output, and follow-through reflects on the brand.</p>
+      </div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">07</div>
+      <div class="rule-content">
+        <h4>No Last-Minute Chaos</h4>
+        <p>Preparation prevents emergencies. Every crisis in planning is caused by something that could have been done earlier.</p>
+      </div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-num">08</div>
+      <div class="rule-content">
+        <h4>Respect Your Team Lead</h4>
+        <p>Leads are accountable for their teams. Support your lead by being reliable, transparent, and solution-focused.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ 11 COMMS ═══════════════════════════ -->
+<div class="section" id="comms">
+  <div class="section-label"><span class="dot"></span> Section 10</div>
+  <h2 class="section-title">Communication Structure</h2>
+  <div class="section-rule"></div>
+
+  <div class="comm-channels">
+    <div class="comm-channel">
+      <span class="icon">💬</span>
+      <h4>Main Planning Group</h4>
+      <p>All committee leads in one WhatsApp/Slack group. No side conversations on critical decisions.</p>
+    </div>
+    <div class="comm-channel">
+      <span class="icon">🗂️</span>
+      <h4>Team Working Groups</h4>
+      <p>Each team has its own private working group for task management and daily coordination.</p>
+    </div>
+    <div class="comm-channel">
+      <span class="icon">📹</span>
+      <h4>Weekly Leadership Meeting</h4>
+      <p>Leads only. Every team reports progress, blockers, and next steps. Mandatory attendance.</p>
+    </div>
+    <div class="comm-channel">
+      <span class="icon">📁</span>
+      <h4>Google Drive &amp; Notion Workspace</h4>
+      <p>Two central hubs for all assets: <strong>Google Drive</strong> (files, graphics, recordings) and <strong>Notion</strong> (planning docs, task tracking, team wikis). Every committee member has access to both.</p>
+    </div>
+    <div class="comm-channel">
+      <span class="icon">🔔</span>
+      <h4>Escalation Protocol</h4>
+      <p>Issue → Team Lead → Lead resolves or escalates to Founders within 24hrs. No silent failures.</p>
+    </div>
+  </div>
+
+  <div class="info-box" style="margin-top:18px;">
+    <strong>Response Time Expectation:</strong> All messages in planning groups must receive a response within <strong>6 hours</strong> during active planning phases. During conference week, response time drops to <strong>1 hour</strong> maximum.
+  </div>
+</div>
+
+<!-- ═══════════════════════════ 12 SUCCESS ═══════════════════════════ -->
+<div class="section" id="success">
+  <div class="section-label"><span class="dot"></span> Section 11</div>
+  <h2 class="section-title">What Success Looks Like</h2>
+  <div class="section-rule"></div>
+  <p style="color:var(--text-mid); font-size:14px; margin-bottom:20px;">Success is not just hosting the conference. These are the markers we use to evaluate whether we truly succeeded.</p>
+
+  <div class="success-row">
+    <div class="success-card">
+      <span class="icon">🧠</span>
+      <p>Students leave with real <strong style="color:var(--amber);">clarity and tools</strong> — not just motivation.</p>
+    </div>
+    <div class="success-card">
+      <span class="icon">🎤</span>
+      <p>Speakers want to <strong style="color:var(--amber);">return next year</strong> and recommend us to peers.</p>
+    </div>
+    <div class="success-card">
+      <span class="icon">🌍</span>
+      <p>A thriving <strong style="color:var(--amber);">alumni community</strong> continues long after the event ends.</p>
+    </div>
+    <div class="success-card">
+      <span class="icon">🔁</span>
+      <p>This becomes an <strong style="color:var(--amber);">annual national platform</strong> — not a one-time program.</p>
+    </div>
+  </div>
+
+  <div class="highlight-box" style="margin-top:20px;">
+    <span class="icon">🏆</span>
+    <p>Our long-term goal is to build <strong>a repeatable national academic platform</strong>. Every choice you make this cycle either builds that future or delays it. Make every decision count.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ 13 CONTACT ═══════════════════════════ -->
+<div class="section" id="contact">
+  <div class="section-label"><span class="dot"></span> Section 12</div>
+  <h2 class="section-title">Contact Directory</h2>
+  <div class="section-rule"></div>
+
+  <div class="contact-banner">
+    <p style="font-size:13.5px; color:var(--mist); margin-bottom:4px;">Know exactly who to reach, for what, and how. Use this directory for escalations, cross-team collaboration, and urgent issues.</p>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-role">Main Organizer / Conference Director</div>
+        <div class="contact-name">David John</div>
+        <div class="contact-detail"><span class="icon">📧</span>johndavidchinedu@gmail.com</div>
+        <div class="contact-placeholder">For: Final approvals, academic direction, speaker approval, strategic decisions &amp; escalations</div>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-role">Co-Organizer / Conference Director</div>
+        <div class="contact-name">Emmanuella Chiemeke</div>
+        <div class="contact-detail"><span class="icon">📧</span>officialebube101@gmail.com</div>
+        <div class="contact-placeholder">For: Operations oversight, community management, technical &amp; partnership decisions</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════ CLOSING ═══════════════════════════ -->
+<div class="section">
+  <div class="founder-close">
+    <h3>You Are Not Planning an Event.<br>You Are <em>Building a Movement.</em></h3>
+    <p>This conference may start small — but if every person in this committee executes with full seriousness, creativity, and ownership, what we build here will outlast this one program.</p>
+    <p>Most students attend conferences. A very few build them. You are in that second group now. Honor it.</p>
+    <p style="margin-top:28px; font-family:'Space Mono',monospace; font-size:11px; color:var(--gold); letter-spacing:0.1em;">STUDENT TRANSITION CONFERENCE · PLANNING COMMITTEE · 2025</p>
+  </div>
+</div>
+
+</div><!-- end .main -->
+
+<div class="page-footer">
+  Student Transition Conference · Planning Committee Handbook · 2025 Edition · Internal Document — Confidential
+</div>
+
+</body>
+</html>
